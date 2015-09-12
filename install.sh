@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Variables
 BACKUP_DIR="${HOME}/.dotfiles_backup"
+PRIVATE_GITCONFIG_FILE="${HOME}/.gitconfig_private"
 DOTS=(".spacemacs" ".vim" ".vimrc" ".gitconfig" ".gitignore")
 # Functions
 function backup() {
@@ -22,6 +23,19 @@ if [ -e "$BACKUP_DIR" ]; then
 else
   mkdir "$BACKUP_DIR"
 fi
+# Create private gitconfig
+if [ ! -e "$PRIVATE_GITCONFIG_FILE" ]; then
+  echo "Creating ${PRIVATE_GITCONFIG_FILE} to save private gitconfig settings"
+  touch "$PRIVATE_GITCONFIG_FILE"
+  read -p "Please provide your git config global user.name: " git_name
+  read -p "And your git config global user.email: " git_email
+  cat > $PRIVATE_GITCONFIG_FILE <<- EOF
+[user]
+    name = ${git_name}
+    email = ${git_email}
+EOF
+fi
+# backup & link dotfiles
 for dot in ${DOTS[@]}; do
   # Move old dotfile to backup
   backup "${HOME}/${dot}"
