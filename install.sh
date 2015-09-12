@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Variables
 BACKUP_DIR="${HOME}/.dotfiles_backup"
+DOTS=(".spacemacs")
 # Functions
 function backup() {
   if [ -e "$1" ]; then
@@ -20,7 +21,9 @@ if [ -e "$BACKUP_DIR" ]; then
 else
   mkdir "$BACKUP_DIR"
 fi
-# Move old files to backup
-backup "${HOME}/.spacemacs"
-# Create symlinks to dotfiles
-ln -s "${PWD}/.spacemacs" "${HOME}/"
+for dot in ${DOTS[@]}; do
+  # Move old dotfile to backup
+  backup "${HOME}/${dot}"
+  # Create symlink to dotfile
+  ln -s "${PWD}/${dot}" "${HOME}/"
+done
