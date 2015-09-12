@@ -31,7 +31,7 @@
      html
      javascript
      osx
-     php
+     ;; php
      ruby
      )
    ;; List of additional packages that will be installed without being
