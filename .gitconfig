@@ -1,0 +1,23 @@
+[credential]
+    helper = osxkeychain
+[push]
+    default = simple
+[alias]
+    st = status -s
+    cl = clone
+    co = checkout
+    br = branch
+    ci = commit
+    lg = log --graph --pretty=format:'%C(auto)%h %d %s%C(reset) %C(cyan)[%an]%C(reset)'
+    fe = fetch
+    pl = pull
+    ps = push
+    cp = cherry-pick
+    hash = rev-parse --verify
+    hs = hash
+    sh = hash --short
+    o = browse
+[pull]
+    rebase = true
+[rerere]
+    enabled = true
