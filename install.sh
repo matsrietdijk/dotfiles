@@ -2,7 +2,7 @@
 # Variables
 BACKUP_DIR="${HOME}/.dotfiles_backup"
 PRIVATE_GITCONFIG_FILE="${HOME}/.gitconfig_private"
-DOTS=(".spacemacs" ".vim" ".vimrc" ".gitconfig" ".gitignore")
+DOTS=(".spacemacs" ".vim" ".vimrc" ".gitconfig" ".gitignore" ".config")
 # Functions
 function backup() {
   if [ -e "$1" ]; then
