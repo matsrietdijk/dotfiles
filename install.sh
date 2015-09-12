@@ -5,6 +5,7 @@ DOTS=(".spacemacs")
 # Functions
 function backup() {
   if [ -e "$1" ]; then
+    echo "Backing up ${1}"
     if [ -L "$1" ]; then
       source_path=`readlink ${1}`
       ln -s "$source_path" "${BACKUP_DIR}/"
