@@ -29,6 +29,7 @@
      ;; syntax-checking
      version-control
      osx
+     ruby
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -153,6 +154,11 @@ before layers configuration."
    ;; specified with an installed package.
    ;; Not used for now.
    dotspacemacs-default-package-repository nil
+   ;; Ruby layer
+   ;; Set rbenv as the ruby version manager
+   ruby-version-manager 'rbenv
+   ;; Enable rails support
+   ruby-enable-ruby-on-rails-support t
    )
   ;; User initialization goes here
   )
@@ -163,6 +169,19 @@ before layers configuration."
 layers configuration."
   ;; Enable line numbers
   (global-linum-mode)
+  ;; Change line number format
+  (defun linum-format-func (line)
+    (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
+      (propertize (format (format "%%%dd " w) line) 'face 'linum)))
+  (setq linum-format 'linum-format-func)
+  ;; Set tab width to 2
+  (setq-default tab-width 2)
+  (setq-default sh-basic-offset 2)
+  (setq-default sh-indentation 2)
+  ;; Never indent with hard tabs
+  (setq-default indent-tabs-mode nil)
+  ;; Remove trailing white space before save
+  (add-hook 'before-save-hook 'delete-trailing-whitespace)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
