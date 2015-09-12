@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Variables
 BACKUP_DIR="${HOME}/.dotfiles_backup"
-DOTS=(".spacemacs" ".vim" ".vimrc")
+DOTS=(".spacemacs" ".vim" ".vimrc" ".gitconfig")
 # Functions
 function backup() {
   if [ -e "$1" ]; then
