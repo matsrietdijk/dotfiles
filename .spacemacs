@@ -185,6 +185,8 @@ layers configuration."
   (setq-default indent-tabs-mode nil)
   ;; Remove trailing white space before save
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
+  ;; Customize region highlight color
+  (set-face-attribute 'region nil :background "#006B8F")
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
