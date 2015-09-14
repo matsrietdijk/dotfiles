@@ -9,10 +9,10 @@ function backup() {
     echo "Backing up ${1}"
     if [ -L "$1" ]; then
       source_path=`readlink ${1}`
-      ln -s "$source_path" "${BACKUP_DIR}/"
+      ln -s "$source_path" "${BACKUP_DIR}/${1}"
       rm "$1"
     else
-      mv "$1" "${BACKUP_DIR}/"
+      mv "$1" "${BACKUP_DIR}/${1}"
     fi
   fi
 }
