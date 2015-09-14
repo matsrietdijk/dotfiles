@@ -35,10 +35,13 @@ if [ ! -e "$PRIVATE_GITCONFIG_FILE" ]; then
     email = ${git_email}
 EOF
 fi
-# backup & link dotfiles
+# Backup & link dotfiles
 for dot in ${DOTS[@]}; do
   # Move old dotfile to backup
   backup "${HOME}/${dot}"
   # Create symlink to dotfile
   ln -s "${PWD}/${dot}" "${HOME}/"
 done
+# Clone spacemacs
+backup "${HOME}/.emacs.d"
+git clone --recursive https://github.com/syl20bnr/spacemacs ~/.emacs.d
