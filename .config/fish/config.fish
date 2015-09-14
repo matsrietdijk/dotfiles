@@ -59,6 +59,13 @@ test -d /usr/local/sbin ; and set -x PATH /usr/local/sbin $PATH
 test -d (brew --prefix homebrew/php/php56)/bin ; and set -x PATH (brew --prefix homebrew/php/php56)/bin $PATH
 test -d (brew --prefix homebrew/php/php53)/bin ; and set -x PATH (brew --prefix homebrew/php/php53)/bin $PATH
 
+set -x JAVA_VERSION 1.7.0_79
+# set -x JAVA_VERSION 1.8.0_45
+set -x JAVA_HOME /Library/Java/JavaVirtualMachines/jdk{$JAVA_VERSION}.jdk/Contents/Home
+test -d $JAVA_HOME ; and set -x PATH {$JAVA_HOME}/bin $PATH
+set -x JBOSS_HOME /usr/local/opt/jboss-as/libexec
+test -d $JBOSS_HOME ; and set -x PATH $PATH {$JBOSS_HOME}/bin
+
 if type rbenv > /dev/null
   rbenv init - | source
 end
