@@ -187,6 +187,17 @@ layers configuration."
   (add-hook 'before-save-hook 'delete-trailing-whitespace)
   ;; Customize region highlight color
   (set-face-attribute 'region nil :background "#006B8F")
+  ;; Add pane navigation key bindings
+  (global-set-key (kbd "s-]") 'other-window)
+  (defun prev-window ()
+    (interactive)
+    (other-window -1)
+    )
+  (global-set-key (kbd "s-[") 'prev-window)
+  ;; Add key binding to maximize frame
+  (global-set-key (kbd "M-s-f") 'toggle-frame-fullscreen)
+  ;; Set bash as default shell (fish is not backwards compatible)
+  (setq shell-file-name "/bin/bash")
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
