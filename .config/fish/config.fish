@@ -33,7 +33,7 @@ function .6;      cd ../../../../../..; end
 if type hub > /dev/null
   function git; hub $argv; end
 end
-function g; git $argv; end
+function g --wraps git; git $argv; end
 
 function psg; ps aux | grep -i $argv; end
 function hs;  history | grep -i $argv; end
