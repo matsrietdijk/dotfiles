@@ -187,6 +187,7 @@ layers configuration."
   (setq-default web-mode-css-indent-offset 2)
   (setq-default web-mode-code-indent-offset 2)
   (setq-default web-mode-indent-style 2)
+  (setq-default js2-basic-offset 2)
   ;; Never indent with hard tabs
   (setq-default indent-tabs-mode nil)
   ;; Remove trailing white space before save
