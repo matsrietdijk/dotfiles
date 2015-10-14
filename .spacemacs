@@ -22,6 +22,7 @@
      emacs-lisp
      git
      markdown
+     yaml
      ;; org
      ;; (shell :variables
      ;;        shell-default-height 30
