@@ -55,6 +55,7 @@ set -x LANGUAGE en_US.UTF-8
 set -x LC_ALL en_US.UTF-8
 set -g default_user mats
 test -d /usr/local/sbin ; and set -x PATH /usr/local/sbin $PATH
+test -d {$HOME}/.local/bin ; and set -x PATH {$HOME}/.local/bin $PATH
 
 test -d (brew --prefix homebrew/php/php56)/bin ; and set -x PATH (brew --prefix homebrew/php/php56)/bin $PATH
 test -d (brew --prefix homebrew/php/php53)/bin ; and set -x PATH (brew --prefix homebrew/php/php53)/bin $PATH
