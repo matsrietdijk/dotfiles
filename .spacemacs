@@ -30,6 +30,7 @@
      syntax-checking
      version-control
      html
+     haskell
      javascript
      osx
      ;; php
