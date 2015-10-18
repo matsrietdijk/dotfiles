@@ -70,3 +70,7 @@ test -d $JBOSS_HOME ; and set -x PATH $PATH {$JBOSS_HOME}/bin
 if type rbenv > /dev/null
   rbenv init - | source
 end
+
+if type docker-machine > /dev/null
+  eval (docker-machine env default)
+end
