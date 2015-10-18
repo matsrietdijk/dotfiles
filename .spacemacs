@@ -182,14 +182,23 @@ layers configuration."
       (propertize (format (format "%%%dd " w) line) 'face 'linum)))
   (setq linum-format 'linum-format-func)
   ;; Set tab width to 2
-  (setq-default tab-width 2)
-  (setq-default sh-basic-offset 2)
-  (setq-default sh-indentation 2)
-  (setq-default web-mode-markup-indent-offset 2)
-  (setq-default web-mode-css-indent-offset 2)
-  (setq-default web-mode-code-indent-offset 2)
-  (setq-default web-mode-indent-style 2)
-  (setq-default js2-basic-offset 2)
+  (setq-default
+   tab-width 2
+   sh-basic-offset 2
+   sh-indentation 2
+   web-mode-markup-indent-offset 2
+   web-mode-css-indent-offset 2
+   web-mode-code-indent-offset 2
+   web-mode-indent-style 2
+   js2-basic-offset 2
+   haskell-indent-spaces 4
+   haskell-indentation-ifte-offset 4
+   haskell-indentation-layout-offset 4
+   haskell-indentation-left-offset 4
+   haskell-indentation-starter-offset 4
+   haskell-indentation-where-post-offset 4
+   haskell-indentation-where-pre-offset 4
+   )
   ;; Never indent with hard tabs
   (setq-default indent-tabs-mode nil)
   ;; Remove trailing white space before save
