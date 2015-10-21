@@ -71,6 +71,10 @@ if type rbenv > /dev/null
   rbenv init - | source
 end
 
+if type jenv > /dev/null
+  jenv global > /dev/null
+end
+
 if type docker-machine > /dev/null
   eval (docker-machine env default)
 end
