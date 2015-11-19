@@ -5,20 +5,24 @@
 [push]
     default = simple
 [alias]
-    st = status -s
-    cl = clone
-    co = checkout
+    ap = add -p
     br = branch
     ci = commit
-    lg = log --graph --pretty=format:'%C(auto)%h %d %s%C(reset) %C(cyan)[%an]%C(reset)'
-    fe = fetch
-    pl = pull
-    ps = push
+    cl = clone
+    co = checkout
     cp = cherry-pick
+    diffc = diff --cached
+    diffs = diff --staged
+    fe = fetch
     hash = rev-parse --verify
     hs = hash
-    sh = hash --short
+    lg = log --graph --pretty=format:'%C(auto)%h %d %s%C(reset) %C(cyan)[%an]%C(reset)'
     o = browse
+    pl = pull
+    ps = push
+    pso = push -u origin
+    sh = hash --short
+    st = status -s
 [pull]
     rebase = true
 [rerere]
