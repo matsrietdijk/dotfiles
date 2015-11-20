@@ -11,8 +11,9 @@
     cl = clone
     co = checkout
     cp = cherry-pick
-    diffc = diff --cached
-    diffs = diff --staged
+    di = diff
+    dc = diff --cached
+    ds = diff --staged
     fe = fetch
     hash = rev-parse --verify
     hs = hash
