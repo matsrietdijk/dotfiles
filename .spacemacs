@@ -182,7 +182,7 @@ layers configuration."
     (let ((w (length (number-to-string (count-lines (point-min) (point-max))))))
       (propertize (format (format "%%%dd " w) line) 'face 'linum)))
   (setq linum-format 'linum-format-func)
-  ;; Set tab width to 2
+  ;; Set tab width to 2 (4 for haskell)
   (setq-default
    tab-width 2
    sh-basic-offset 2
@@ -192,6 +192,7 @@ layers configuration."
    web-mode-code-indent-offset 2
    web-mode-indent-style 2
    js2-basic-offset 2
+   css-indent-offset 2
    haskell-indent-spaces 4
    haskell-indentation-ifte-offset 4
    haskell-indentation-layout-offset 4
