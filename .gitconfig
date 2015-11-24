@@ -10,6 +10,8 @@
     ci = commit
     cl = clone
     co = checkout
+    cm = checkout master
+    cb = checkout -b
     cp = cherry-pick
     dc = diff --cached
     di = diff
