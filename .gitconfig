@@ -18,7 +18,7 @@
     ds = diff --staged
     fe = fetch
     hash = rev-parse --verify
-    hs = hash
+    hs = hash --short
     lg = log --graph --pretty=format:'%C(auto)%h %d %s%C(reset) %C(cyan)[%an]%C(reset)'
     mr = merge
     o = browse
@@ -27,7 +27,7 @@
     pso = !git push -u origin `git rev-parse --abbrev-ref HEAD`
     rb = rebase
     rbc = rebase --continue
-    sh = hash --short
+    sh = show
     st = status -s
 [pull]
     rebase = true
