@@ -57,6 +57,8 @@ set -g default_user mats
 test -d /usr/local/sbin ; and set -x PATH /usr/local/sbin $PATH
 test -d {$HOME}/.local/bin ; and set -x PATH {$HOME}/.local/bin $PATH
 
+test -d /Library/TeX/texbin ; and set -x PATH /Library/TeX/texbin $PATH
+
 test -d (brew --prefix homebrew/php/php56)/bin ; and set -x PATH (brew --prefix homebrew/php/php56)/bin $PATH
 test -d (brew --prefix homebrew/php/php53)/bin ; and set -x PATH (brew --prefix homebrew/php/php53)/bin $PATH
 
