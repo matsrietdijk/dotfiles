@@ -34,7 +34,7 @@
      haskell
      javascript
      osx
-     ;; php
+     php
      ruby
      ruby-on-rails
      latex
@@ -168,6 +168,7 @@ before layers configuration."
    ruby-version-manager 'rbenv
    ;; Enable rails support
    ruby-enable-ruby-on-rails-support t
+   dotspacemacs-elpa-https nil
    )
   ;; User initialization goes here
   )
@@ -194,6 +195,7 @@ layers configuration."
    web-mode-indent-style 2
    js2-basic-offset 2
    css-indent-offset 2
+   c-basic-offset 2
    haskell-indent-spaces 4
    haskell-indentation-ifte-offset 4
    haskell-indentation-layout-offset 4
@@ -219,7 +221,25 @@ layers configuration."
   (global-set-key (kbd "M-s-f") 'toggle-frame-fullscreen)
   ;; Set bash as default shell (fish is not backwards compatible)
   (setq shell-file-name "/bin/bash")
+  ;; Enable coffee mode in coffee jsx
+  (add-to-list 'auto-mode-alist '("\\.cjsx\\'" . coffee-mode))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(safe-local-variable-values
+   (quote
+    ((haskell-process-use-ghci . t)
+     (haskell-indent-spaces . 4)))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-tooltip-common ((t (:inherit company-tooltip :weight bold :underline nil))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
