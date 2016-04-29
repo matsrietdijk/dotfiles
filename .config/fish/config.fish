@@ -59,8 +59,8 @@ test -d {$HOME}/.local/bin ; and set -x PATH {$HOME}/.local/bin $PATH
 
 test -d /Library/TeX/texbin ; and set -x PATH /Library/TeX/texbin $PATH
 
-test -d (brew --prefix homebrew/php/php56)/bin ; and set -x PATH (brew --prefix homebrew/php/php56)/bin $PATH
-test -d (brew --prefix homebrew/php/php53)/bin ; and set -x PATH (brew --prefix homebrew/php/php53)/bin $PATH
+# test -d (brew --prefix homebrew/php/php56)/bin ; and set -x PATH (brew --prefix homebrew/php/php56)/bin $PATH
+# test -d (brew --prefix homebrew/php/php53)/bin ; and set -x PATH (brew --prefix homebrew/php/php53)/bin $PATH
 
 set -x JAVA_VERSION 1.7.0_79
 # set -x JAVA_VERSION 1.8.0_45
@@ -73,7 +73,7 @@ if type rbenv > /dev/null
   rbenv init - | source
 end
 
-if type jenv > /dev/null
+if test -d ~/.jenv/shims
   jenv global > /dev/null
 end
 
