@@ -12,10 +12,9 @@ if [ (uname) = 'Darwin' ]
   function safari;  open -a Safari $argv; end
   function spotify; open -a Spotify $argv; end
   function slack;   open -a Slack $argv; end
-  function toggl;   open -a TogglDesktop $argv; end
   function trello;  safari https://trello.com $argv; end
   function emacs;   open -a Emacs $argv; end
-  function hop;     trello; spotify; slack; toggl; emacs $argv; end
+  function para;    trello; spotify; slack; emacs $argv; end
 end
 
 function -;       cd -; end
