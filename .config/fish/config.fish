@@ -13,8 +13,8 @@ if [ (uname) = 'Darwin' ]
   function spotify; open -a Spotify $argv; end
   function slack;   open -a Slack $argv; end
   function trello;  safari https://trello.com $argv; end
-  function emacs;   open -a Emacs $argv; end
-  function para;    trello; spotify; slack; emacs $argv; end
+  function e;       emacs $argv &; end
+  function para;    trello; spotify; slack; emacs &; end
 end
 
 function -;       cd -; end
@@ -56,11 +56,12 @@ set -g default_user mats
 test -d /usr/local/sbin ; and set -x PATH /usr/local/sbin $PATH
 test -d {$HOME}/.local/bin ; and set -x PATH {$HOME}/.local/bin $PATH
 test -d {$HOME}/.jenv/bin ; and set -x PATH {$HOME}/.jenv/bin $PATH
+test -d {$HOME}/.composer/vendor/bin ; and set -x PATH {$HOME}/.composer/vendor/bin $PATH
 
 test -d /Library/TeX/texbin ; and set -x PATH /Library/TeX/texbin $PATH
 
-test -d (brew --prefix homebrew/php/php56)/bin ; and set -x PATH (brew --prefix homebrew/php/php56)/bin $PATH
-# test -d (brew --prefix homebrew/php/php70)/bin ; and set -x PATH (brew --prefix homebrew/php/php70)/bin $PATH
+# test -d (brew --prefix homebrew/php/php56)/bin ; and set -x PATH (brew --prefix homebrew/php/php56)/bin $PATH
+test -d (brew --prefix homebrew/php/php70)/bin ; and set -x PATH (brew --prefix homebrew/php/php70)/bin $PATH
 
 if type rbenv > /dev/null
   rbenv init - | source
@@ -68,8 +69,4 @@ end
 
 if test -d ~/.jenv/shims
   jenv global > /dev/null
-end
-
-if type docker-machine > /dev/null
-  eval (docker-machine env default)
 end
